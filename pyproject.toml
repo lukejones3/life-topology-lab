@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "life-topology-lab"
+version = "0.1.0"
+description = "Privacy-preserving longitudinal state, topology, and forecasting research"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy",
+  "pandas",
+  "pyarrow",
+  "scipy",
+  "scikit-learn",
+  "networkx",
+  "sentence-transformers",
+  "ripser",
+  "persim",
+  "lancedb",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

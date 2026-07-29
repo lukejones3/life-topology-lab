@@ -1,0 +1,29 @@
+# Personal source material and generated subject-level results
+data/
+private/
+output/
+artifacts/
+*.parquet
+*.db
+*.sqlite*
+*.lance
+*.jsonl
+*.csv
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+token*.json
+
+# Python / editor state
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
+
