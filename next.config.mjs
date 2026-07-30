@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: "dist",
+  distDir: process.env.VERCEL ? ".next" : "dist",
   output: "standalone",
   poweredByHeader: false,
 };
