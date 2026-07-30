@@ -30,4 +30,5 @@ __pycache__/
 # Public demo build state
 node_modules/
 .next/
+dist/
 out/
