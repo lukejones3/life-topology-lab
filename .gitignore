@@ -27,3 +27,7 @@ __pycache__/
 .idea/
 .vscode/
 
+# Public demo build state
+node_modules/
+.next/
+out/

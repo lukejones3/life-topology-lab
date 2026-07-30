@@ -1,5 +1,12 @@
 # Life Topology Lab
 
+**Interactive demo:** deployment link available from the repository homepage.
+
+The demo exposes the evaluation architecture—retrieval benchmarking, blind
+state validation, sampled topology, negative-result tracking, and walk-forward
+forecasting—using synthetic display records. It contains no private corpus
+content.
+
 A privacy-preserving research toolkit for modeling a longitudinal personal
 record as a dynamical system.
 
@@ -62,4 +69,3 @@ This repository is the sanitized extraction of an active longitudinal research
 system. The source modules are preserved now; the next extraction pass will
 replace the remaining project-local loaders with a stable public input API and
 synthetic fixtures.
-
