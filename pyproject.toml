@@ -14,7 +14,9 @@ dependencies = [
   "scipy",
   "scikit-learn",
   "networkx",
-  "sentence-transformers",
+  "sentence-transformers>=5.7.0",
+  "torch>=2.13.0",
+  "transformers>=5.5.0",
   "ripser",
   "persim",
   "lancedb",
@@ -22,4 +24,3 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

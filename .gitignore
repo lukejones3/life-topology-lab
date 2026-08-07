@@ -22,6 +22,7 @@ token*.json
 # Python / editor state
 .venv/
 __pycache__/
+*.egg-info/
 *.py[cod]
 .DS_Store
 .idea/

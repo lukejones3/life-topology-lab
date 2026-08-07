@@ -41,6 +41,15 @@ private local outputs
 The private corpus and generated results remain outside Git. Paths are supplied
 at runtime. See [PRIVACY.md](PRIVACY.md).
 
+## Model supply-chain boundary
+
+Embedding models are treated as executable dependencies rather than arbitrary
+user input. The runtime accepts only the audited model allowlist in
+`life_topology.config`, pins each download to an exact repository commit, and
+disables remote model code. Models that publish safetensors are required to use
+that format. The security workflow audits both Python and npm dependencies on
+every dependency change and once each week.
+
 ## Blind cognitive-operation experiment
 
 The operation experiment independently assigns every day one primary operation:

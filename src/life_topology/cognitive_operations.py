@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import linear_sum_assignment
 from scipy.stats import chi2_contingency
-from sentence_transformers import SentenceTransformer
 from sklearn.cluster import KMeans
 from sklearn.metrics import (
     adjusted_mutual_info_score,
@@ -19,6 +18,7 @@ from sklearn.preprocessing import normalize
 
 from .config import OUTPUT_ROOT, PARQUET_ROOT, SETTINGS
 from .forecasting import _load_daily
+from .models import load_sentence_transformer
 from .topology import _jsonable
 
 
@@ -103,7 +103,7 @@ def _daily_documents(days: list[str]) -> tuple[list[str], list[int]]:
 def _classify(
     model_name: str, documents: list[str]
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    model = SentenceTransformer(model_name)
+    model = load_sentence_transformer(model_name)
     model.max_seq_length = 1024 if "bge-m3" in model_name.lower() else 512
     anchor_texts = [text for op in OPERATIONS for text in ANCHORS[op]]
     anchor_vectors = normalize(

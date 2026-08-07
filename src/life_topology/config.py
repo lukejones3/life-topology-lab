@@ -12,6 +12,14 @@ DB_PATH = OUTPUT_ROOT / "daily_state.db"
 VECTOR_PATH = OUTPUT_ROOT / "vectors.lance"
 MANIFEST_PATH = OUTPUT_ROOT / "manifest.json"
 
+# Model repositories are remote executable inputs, not ordinary data files.
+# Resolve only this allowlist and pin every artifact to an audited commit.
+MODEL_REVISIONS = {
+    "sentence-transformers/all-MiniLM-L6-v2": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "BAAI/bge-m3": "5617a9f61b028005a4858fdac845db406aefb181",
+}
+SAFETENSORS_MODELS = frozenset({"sentence-transformers/all-MiniLM-L6-v2"})
+
 
 @dataclass(frozen=True)
 class Settings:

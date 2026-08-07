@@ -23,10 +23,10 @@ from sklearn.feature_selection import mutual_info_regression
 from sklearn.metrics import adjusted_mutual_info_score, mutual_info_score
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import RobustScaler, StandardScaler
-from sentence_transformers import SentenceTransformer
 
 from .config import DB_PATH, OUTPUT_ROOT, PARQUET_ROOT, SETTINGS, VECTOR_PATH
 from .embed import _table_name
+from .models import load_sentence_transformer
 
 
 RESULT_ROOT = OUTPUT_ROOT / "topology"
@@ -829,7 +829,7 @@ def winding_tests(base: pd.DataFrame, views: dict[str, np.ndarray]) -> dict:
     x = _normalized_rows(lived[observed].astype(float))
     plane = PCA(n_components=2, random_state=SETTINGS.random_seed).fit(x)
     projected = plane.transform(x)
-    model = SentenceTransformer(SETTINGS.embedding_model)
+    model = load_sentence_transformer(SETTINGS.embedding_model)
     concepts = [
         "relocation and choosing where to build a life",
         "authorship and making something of my own",
